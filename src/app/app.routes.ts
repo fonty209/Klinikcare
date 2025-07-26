@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'tabs/tab1', // arahkan langsung ke tab2 jika kamu ingin itu awalnya
+    redirectTo: 'tabs/tab1', 
     pathMatch: 'full'
   },
   {

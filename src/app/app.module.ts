@@ -6,18 +6,18 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { PostProviders } from './providers/post-providers'; // ✅ Sesuaikan path kalau perlu
+import { PostProviders } from './providers/post-providers'; 
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    HttpClientModule  // ✅ WAJIB agar HttpClient bisa dipakai
+    HttpClientModule  // 
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    PostProviders     // ✅ Tambahkan provider kamu di sini
+    PostProviders     // 
   ],
   bootstrap: [AppComponent],
 })
