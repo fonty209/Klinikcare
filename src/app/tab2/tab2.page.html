@@ -1,0 +1,81 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title>Formulir Pasien</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Isi Data Pasien</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Form input -->
+      <ion-item>
+        <ion-label position="floating">Nama</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Umur</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Jenis Kelamin</ion-label>
+        <ion-select>
+          <ion-select-option value="Laki-laki">Laki-laki</ion-select-option>
+          <ion-select-option value="Perempuan">Perempuan</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Alamat</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Keluhan</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Tanggal</ion-label>
+        <ion-datetime></ion-datetime>
+      </ion-item>
+
+      <ion-button expand="block" color="success">Simpan</ion-button>
+      <ion-button expand="block" fill="clear" color="medium">Reset</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- List Pasien -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Daftar Pasien</ion-card-title>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let p of pasienList">
+        <ion-label>
+          <h2>{{ p.nama }} ({{ p.umur }} th)</h2>
+          <p>Kelamin: {{ p.kelamin }}</p>
+          <p>Alamat: {{ p.alamat }}</p>
+          <p>Keluhan: {{ p.keluhan }}</p>
+          <p>Tanggal: {{ p.tanggal }}</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button color="tertiary" fill="clear">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
+          <ion-button color="danger" fill="clear">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>
